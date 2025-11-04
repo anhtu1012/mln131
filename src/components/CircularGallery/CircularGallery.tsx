@@ -518,31 +518,31 @@ class App {
   ) {
     const defaultItems = [
       {
-        image: `/assets/image/khoanh1.jpeg`,
+        image: `https://live.staticflickr.com/5572/14817732193_3bea73d702_c.jpg`,
         text: "",
       },
       {
-        image: `/assets/image/khoanh2.jpeg`,
+        image: `https://langvanhoavietnam.vn/Files/image/2022/Thang%2012/Noihoitu/dd.jpg`,
         text: "",
       },
       {
-        image: `/assets/image/khoanh3.jpeg`,
+        image: `https://cdn.xanhsm.com/2025/03/0f02b42b-lang-van-hoa-du-lich-cac-dan-toc-viet-nam-1.jpg`,
         text: "",
       },
       {
-        image: `/assets/image/khoanh4.jpeg`,
+        image: `https://huyendoannongson.vn/ten-va-hinh-anh-54-dan-toc-viet-nam/`,
         text: "",
       },
       {
-        image: `/assets/image/khoanh5.jpg`,
+        image: `https://langvanhoavietnam.vn/Files/image/2022/Thang%2012/Noihoitu/dd.jpg`,
         text: "",
       },
       {
-        image: `/assets/image/khoanh6.jpeg`,
+        image: `https://bcp.cdnchinhphu.vn/zoom/600_315/334894974524682240/2025/2/27/dantoc-17406304498162036247784.jpg`,
         text: "",
       },
       {
-        image: `/assets/image/khoanh7.jpg`,
+        image: `https://ttdn.vn/Uploads/Images/2023/10/10/3/cacdantoc-16969037990481671125584.jpg`,
         text: "",
       },
       {
