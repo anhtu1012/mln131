@@ -79,7 +79,7 @@ function Landing() {
             onLoadedData={handleVideoLoad}
             onError={handleVideoError}
           >
-            <source src="../public/vietnam-landscape2.mp4" type="video/mp4" />
+            <source src="/vietnam-landscape2.mp4" type="video/mp4" />
           </video>
           {/* Fallback gradient nếu video không load được */}
           <div className="fallback-background"></div>
@@ -223,7 +223,7 @@ function Landing() {
                 <div className="image-side">
                   <div className="image-frame">
                     <img
-                      src="../public/img/di-san.jpg"
+                      src="/img/di-san.jpg"
                       alt="Đoàn kết dân tộc"
                       onError={(e) => {
                         e.currentTarget.style.display = "none";
@@ -338,7 +338,7 @@ function Landing() {
 
             <div className="image-divider" data-aos="zoom-in">
               <img
-                src="../public/img/ethnic-tradition.png"
+                src="/img/ethnic-tradition.png"
                 alt="Truyền thống dân tộc"
                 className="section-image"
                 onError={(e) => {
@@ -444,7 +444,7 @@ function Landing() {
 
               <div className="image-divider" data-aos="zoom-in">
                 <img
-                  src="../public/img/religious-harmony.png"
+                  src="/img/religious-harmony.png"
                   alt="Hòa hợp tôn giáo"
                   className="section-image"
                   onError={(e) => {
@@ -578,7 +578,7 @@ function Landing() {
 
               <div className="image-divider" data-aos="zoom-in">
                 <img
-                  src="../public/img/national-unity.png"
+                  src="/img/national-unity.png"
                   alt="Đoàn kết quốc gia"
                   className="section-image"
                   onError={(e) => {
@@ -688,7 +688,7 @@ function Landing() {
               >
                 <div className="gallery-image">
                   <img
-                    src="../public/img/ethnic-unity-1.png"
+                    src="/img/ethnic-unity-1.png"
                     alt="Đại đoàn kết dân tộc"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
@@ -710,7 +710,7 @@ function Landing() {
               >
                 <div className="gallery-image">
                   <img
-                    src="../public/img/ethnic-tradition.png"
+                    src="/img/ethnic-tradition.png"
                     alt="Truyền thống dân tộc"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
@@ -732,7 +732,7 @@ function Landing() {
               >
                 <div className="gallery-image">
                   <img
-                    src="../public/img/religious-harmony.png"
+                    src="/img/religious-harmony.png"
                     alt="Hòa hợp tôn giáo"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
@@ -754,7 +754,7 @@ function Landing() {
               >
                 <div className="gallery-image">
                   <img
-                    src="../public/img/national-unity.png"
+                    src="/img/national-unity.png"
                     alt="Đoàn kết quốc gia"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
@@ -776,7 +776,7 @@ function Landing() {
               >
                 <div className="gallery-image">
                   <img
-                    src="../public/img/ethnic-unity-1.png"
+                    src="/img/ethnic-unity-1.png"
                     alt="Các dân tộc Việt Nam"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
@@ -798,7 +798,7 @@ function Landing() {
               >
                 <div className="gallery-image">
                   <img
-                    src="../public/img/ethnic-tradition.png"
+                    src="/img/ethnic-tradition.png"
                     alt="Di sản văn hóa"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
