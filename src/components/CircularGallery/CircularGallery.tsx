@@ -545,26 +545,6 @@ class App {
         image: `https://ttdn.vn/Uploads/Images/2023/10/10/3/cacdantoc-16969037990481671125584.jpg`,
         text: "",
       },
-      {
-        image: `/assets/image/khoanh8.jpg`,
-        text: "",
-      },
-      {
-        image: `/assets/image/khoanh9.jpg`,
-        text: "",
-      },
-      {
-        image: `/assets/image/khoanh10.jpg`,
-        text: "",
-      },
-      {
-        image: `/assets/image/khoanh11.jpg`,
-        text: "",
-      },
-      {
-        image: `/assets/image/khoanh12.jpg`,
-        text: "",
-      },
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);

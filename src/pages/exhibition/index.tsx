@@ -16,19 +16,19 @@ export default function Exhibition() {
 
   const ethnicImages = [
     {
-      image: "/public/img/ethnic-unity-1.png",
+      image: "/img/b1.jpg",
       text: "Đại đoàn kết dân tộc",
     },
     {
-      image: "/public/img/ethnic-tradition.png",
+      image: "/img/b2.jpg",
       text: "Truyền thống dân tộc",
     },
     {
-      image: "/public/img/religious-harmony.png",
+      image: "/img/b3.jpg",
       text: "Hòa hợp tôn giáo",
     },
     {
-      image: "/public/img/national-unity.png",
+      image: "/img/b4.jpg",
       text: "Đoàn kết quốc gia",
     },
   ];
@@ -42,9 +42,7 @@ export default function Exhibition() {
           <span>Trang Chủ</span>
         </button>
 
-        <h1 className="exhibition-title">
-          Phòng Triển Lãm Di Sản 3D
-        </h1>
+        <h1 className="exhibition-title">Phòng Triển Lãm Di Sản 3D</h1>
 
         <div className="mode-toggle">
           <button
@@ -104,14 +102,21 @@ export default function Exhibition() {
         <div className="instruction-card">
           <h3>🖱️ Điều khiển</h3>
           <ul>
-            <li><strong>Kéo chuột</strong>: Xoay phòng triển lãm</li>
-            <li><strong>Click hình</strong>: Phóng to xem chi tiết</li>
-            <li><strong>Scroll/Cuộn</strong>: Xem thêm hình ảnh</li>
-            <li><strong>ESC</strong>: Đóng hình phóng to</li>
+            <li>
+              <strong>Kéo chuột</strong>: Xoay phòng triển lãm
+            </li>
+            <li>
+              <strong>Click hình</strong>: Phóng to xem chi tiết
+            </li>
+            <li>
+              <strong>Scroll/Cuộn</strong>: Xem thêm hình ảnh
+            </li>
+            <li>
+              <strong>ESC</strong>: Đóng hình phóng to
+            </li>
           </ul>
         </div>
       </div>
     </div>
   );
 }
-

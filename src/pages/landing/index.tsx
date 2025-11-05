@@ -155,7 +155,7 @@ function Landing() {
 
               <div className="dual-tendency">
                 <h3 className="subsection-title" data-aos="fade-up">
-                  <span className="title-accent">Hai Xu Hướng</span> Khách Quan
+                  Hai Xu Hướng Khách Quan
                 </h3>
                 <div className="tendency-grid">
                   <div
@@ -444,7 +444,7 @@ function Landing() {
 
               <div className="image-divider" data-aos="zoom-in">
                 <img
-                  src="/img/religious-harmony.png"
+                  src="https://static-images.vnncdn.net/vps_images_publish/000001/000003/2025/7/31/viet-nam-co-16-ton-giao-gan-28-trieu-tin-do-593.jpg?width=0&s=s8zNZ3q9daLRzBOyXL592w"
                   alt="Hòa hợp tôn giáo"
                   className="section-image"
                   onError={(e) => {
@@ -688,7 +688,7 @@ function Landing() {
               >
                 <div className="gallery-image">
                   <img
-                    src="/img/ethnic-unity-1.png"
+                    src="https://i.pinimg.com/736x/2d/47/ad/2d47ad1aa4fb9b282969af9a885034fb.jpg"
                     alt="Đại đoàn kết dân tộc"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
@@ -710,7 +710,7 @@ function Landing() {
               >
                 <div className="gallery-image">
                   <img
-                    src="/img/ethnic-tradition.png"
+                    src="https://media.vietnamplus.vn/images/7255a701687d11cb8c6bbc58a6c807853349e6cb1d130fba942a5c56d4853d68bcbe0201a565ccb8662e874cb4bf1f1f8c2c4310d3448c011c336eefa1939cda9bba9a527646b1e8a789196fa419ce529b4f6194d8ce7a05b5b4f7e86a4434e7/nghi-le-van-hoa-truyen-thong-cua-cong-dong-dan-toc-2294.jpg"
                     alt="Truyền thống dân tộc"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
@@ -732,7 +732,7 @@ function Landing() {
               >
                 <div className="gallery-image">
                   <img
-                    src="/img/religious-harmony.png"
+                    src="https://static-images.vnncdn.net/vps_images_publish/000001/000003/2025/7/31/viet-nam-co-16-ton-giao-gan-28-trieu-tin-do-593.jpg?width=0&s=s8zNZ3q9daLRzBOyXL592w"
                     alt="Hòa hợp tôn giáo"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
@@ -776,7 +776,7 @@ function Landing() {
               >
                 <div className="gallery-image">
                   <img
-                    src="/img/ethnic-unity-1.png"
+                    src="https://i.pinimg.com/736x/33/d9/d2/33d9d2fd330baaafe9bafacefab97b5e.jpg"
                     alt="Các dân tộc Việt Nam"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
