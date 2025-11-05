@@ -1,0 +1,562 @@
+// ============================================
+// CHAT AI COMPONENT - Theme màu của website
+// ============================================
+
+$color-primary-dark: #2a1810;
+$color-burgundy: #6b1a2c;
+$color-bronze: #b8860b;
+$color-gold: #d4af37;
+$color-cream: #f5f0e8;
+$color-text-dark: #1a1410;
+$color-text-light: #f8f4ed;
+
+// ============================================
+// CHAT BUTTON - Nút chat nổi
+// ============================================
+
+.chat-ai-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $color-burgundy 0%, $color-bronze 100%);
+  border: 2px solid $color-gold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4),
+              0 16px 48px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  overflow: visible;
+
+  .chat-button-icon {
+    font-size: 24px;
+    color: $color-cream;
+    transition: all 0.3s ease;
+  }
+
+  .chat-button-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid $color-gold;
+    animation: pulse 2s infinite;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 12px 32px rgba(212, 175, 55, 0.6),
+                0 24px 64px rgba(0, 0, 0, 0.4);
+    
+    .chat-button-icon {
+      transform: rotate(10deg) scale(1.1);
+    }
+  }
+
+  &:active {
+    transform: scale(1.05) translateY(-2px);
+  }
+
+  &.open {
+    background: linear-gradient(135deg, $color-bronze 0%, $color-primary-dark 100%);
+    
+    .chat-button-icon {
+      transform: rotate(90deg);
+    }
+  }
+
+  @media (max-width: 768px) {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 56px;
+    height: 56px;
+
+    .chat-button-icon {
+      font-size: 22px;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+// ============================================
+// CHAT INTERFACE - Giao diện chat
+// ============================================
+
+.chat-ai-interface {
+  position: fixed;
+  bottom: 100px;
+  right: 2rem;
+  width: 400px;
+  height: 600px;
+  background: $color-primary-dark;
+  border: 2px solid $color-bronze;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+              0 0 40px rgba(212, 175, 55, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+
+  @media (max-width: 768px) {
+    width: calc(100vw - 2rem);
+    height: calc(100vh - 120px);
+    right: 1rem;
+    bottom: 80px;
+  }
+
+  @media (max-width: 480px) {
+    width: calc(100vw - 1rem);
+    height: calc(100vh - 100px);
+    right: 0.5rem;
+    bottom: 70px;
+    border-radius: 12px;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ============================================
+// CHAT HEADER
+// ============================================
+
+.chat-header {
+  background: linear-gradient(135deg, $color-burgundy 0%, $color-bronze 100%);
+  padding: 1.25rem 1.5rem;
+  border-bottom: 2px solid $color-gold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  .chat-header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .chat-header-icon {
+    font-size: 32px;
+    color: $color-gold;
+    animation: iconGlow 2s ease-in-out infinite;
+  }
+
+  .expand-button {
+    margin-left: auto;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: transparent;
+    border: 2px solid rgba($color-gold, 0.5);
+    color: $color-cream;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    .anticon {
+      font-size: 18px;
+    }
+
+    &:hover {
+      background: rgba($color-gold, 0.2);
+      border-color: $color-gold;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(1.05);
+    }
+  }
+
+  .chat-header-text {
+    flex: 1;
+
+    h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: $color-cream;
+      letter-spacing: 0.03em;
+    }
+
+    .chat-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: rgba($color-cream, 0.8);
+      margin-top: 0.25rem;
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #4ade80;
+        box-shadow: 0 0 8px #4ade80;
+        animation: statusBlink 2s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+@keyframes iconGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.8));
+  }
+}
+
+@keyframes statusBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+// ============================================
+// CHAT MESSAGES
+// ============================================
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgba($color-primary-dark, 0.95) 0%,
+    rgba($color-primary-dark, 0.98) 100%
+  );
+  
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba($color-bronze, 0.1);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, $color-bronze, $color-gold);
+    border-radius: 4px;
+    
+    &:hover {
+      background: linear-gradient(to bottom, $color-gold, $color-bronze);
+    }
+  }
+}
+
+.chat-message {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  animation: messageSlide 0.3s ease-out;
+
+  &.user-message {
+    flex-direction: row-reverse;
+
+    .message-content {
+      align-items: flex-end;
+    }
+
+    .message-bubble {
+      background: linear-gradient(135deg, $color-bronze 0%, $color-gold 100%);
+      color: $color-text-dark;
+      border-top-right-radius: 4px;
+    }
+
+    .message-avatar {
+      background: linear-gradient(135deg, $color-gold 0%, $color-bronze 100%);
+    }
+  }
+
+  &.ai-message {
+    .message-bubble {
+      background: rgba($color-burgundy, 0.4);
+      border: 1px solid rgba($color-bronze, 0.3);
+      color: $color-cream;
+      border-top-left-radius: 4px;
+    }
+
+    .message-avatar {
+      background: linear-gradient(135deg, $color-burgundy 0%, $color-primary-dark 100%);
+    }
+  }
+}
+
+@keyframes messageSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-avatar {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $color-bronze;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  .anticon {
+    font-size: 18px;
+    color: $color-cream;
+  }
+}
+
+.message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 75%;
+}
+
+.message-bubble {
+  padding: 0.875rem 1rem;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.message-time {
+  font-size: 0.75rem;
+  color: rgba($color-cream, 0.6);
+  padding: 0 0.5rem;
+}
+
+// Typing Indicator
+.typing-indicator {
+  display: flex;
+  gap: 6px;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $color-gold;
+    animation: typingBounce 1.4s infinite ease-in-out;
+
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  }
+}
+
+@keyframes typingBounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+// ============================================
+// CHAT INPUT
+// ============================================
+
+.chat-input-container {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background: linear-gradient(
+    to top,
+    rgba($color-burgundy, 0.3) 0%,
+    rgba($color-primary-dark, 0.5) 100%
+  );
+  border-top: 2px solid rgba($color-bronze, 0.3);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.chat-input {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  background: rgba($color-primary-dark, 0.6);
+  border: 2px solid rgba($color-bronze, 0.4);
+  border-radius: 24px;
+  color: $color-cream;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    color: rgba($color-cream, 0.5);
+  }
+
+  &:focus {
+    border-color: $color-gold;
+    background: rgba($color-primary-dark, 0.8);
+    box-shadow: 0 0 0 3px rgba($color-gold, 0.2);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.chat-send-button {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $color-bronze 0%, $color-gold 100%);
+  border: 2px solid $color-gold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+
+  .button-icon {
+    font-size: 18px;
+    color: $color-primary-dark;
+  }
+
+  &:hover:not(:disabled) {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.6);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(1.05) rotate(10deg);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+// ============================================
+// ANIMATIONS & EFFECTS
+// ============================================
+
+// Glow effect cho các thành phần
+.chat-header,
+.chat-input-container {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      $color-gold 50%,
+      transparent 100%
+    );
+    opacity: 0.5;
+    animation: lineGlow 3s ease-in-out infinite;
+  }
+}
+
+@keyframes lineGlow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 480px) {
+  .chat-input {
+    font-size: 0.9rem;
+    padding: 0.75rem 0.875rem;
+  }
+
+  .chat-send-button {
+    width: 40px;
+    height: 40px;
+
+    .button-icon {
+      font-size: 16px;
+    }
+  }
+
+  .message-avatar {
+    width: 32px;
+    height: 32px;
+
+    .anticon {
+      font-size: 16px;
+    }
+  }
+
+  .message-bubble {
+    font-size: 0.875rem;
+    padding: 0.75rem 0.875rem;
+  }
+}
+

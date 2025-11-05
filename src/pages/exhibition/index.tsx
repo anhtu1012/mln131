@@ -17,19 +17,31 @@ export default function Exhibition() {
   const ethnicImages = [
     {
       image: "/img/b1.jpg",
-      text: "Đại đoàn kết dân tộc",
+      text: "Nghệ thuật khèn",
     },
     {
       image: "/img/b2.jpg",
-      text: "Truyền thống dân tộc",
+      text: "Đàn Đáy Việt Nam",
     },
     {
       image: "/img/b3.jpg",
-      text: "Hòa hợp tôn giáo",
+      text: "Đàn Tỳ Bà Việt Nam",
     },
     {
       image: "/img/b4.jpg",
-      text: "Đoàn kết quốc gia",
+      text: "Đàn Nguyệt Việt Nam",
+    },
+    {
+      image: "/img/b6.jpg",
+      text: "Đàn Bầu Việt Nam",
+    },
+    {
+      image: "/img/b7.jpg",
+      text: "Đàn T'rưng Việt Nam",
+    },
+    {
+      image: "/img/b8.jpg",
+      text: "Đàn Nhị Việt Nam",
     },
   ];
 
@@ -50,14 +62,14 @@ export default function Exhibition() {
             onClick={() => setMode("dome")}
           >
             <FaCube />
-            <span>Dome</span>
+            <span>Tròn</span>
           </button>
           <button
             className={`mode-btn ${mode === "circular" ? "active" : ""}`}
             onClick={() => setMode("circular")}
           >
             <FaImages />
-            <span>Circular</span>
+            <span>Ngang</span>
           </button>
         </div>
       </div>
@@ -98,7 +110,7 @@ export default function Exhibition() {
       </div>
 
       {/* Instructions */}
-      <div className="instructions">
+      {/* <div className="instructions">
         <div className="instruction-card">
           <h3>🖱️ Điều khiển</h3>
           <ul>
@@ -116,7 +128,7 @@ export default function Exhibition() {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
