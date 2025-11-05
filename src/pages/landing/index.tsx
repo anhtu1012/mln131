@@ -579,7 +579,7 @@ function Landing() {
 
               <div className="image-divider" data-aos="zoom-in">
                 <img
-                  src="/img/national-unity.png"
+                  src="/img/national-unity.jpg"
                   alt="Đoàn kết quốc gia"
                   className="section-image"
                   onError={(e) => {
@@ -755,7 +755,7 @@ function Landing() {
               >
                 <div className="gallery-image">
                   <img
-                    src="/img/national-unity.png"
+                    src="/img/national-unity.jpg"
                     alt="Đoàn kết quốc gia"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
