@@ -11,6 +11,7 @@ import {
   FaExclamationTriangle,
   FaFlag,
   FaHandshake,
+  FaRobot,
   FaSearchPlus,
   FaShieldAlt,
   FaUsers,
@@ -953,6 +954,11 @@ function Landing() {
           <p className="footer-text">
             © 2025 Phân Tích Chiến Lược Chính Trị Việt Nam
           </p>
+          <div className="footer-links">
+            <a href="/ai-appendix" className="footer-link">
+              <FaRobot /> Phụ Lục AI
+            </a>
+          </div>
         </div>
       </footer>
     </div>

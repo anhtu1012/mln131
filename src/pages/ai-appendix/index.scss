@@ -1,0 +1,772 @@
+// ============================================
+// AI APPENDIX PAGE - Phụ lục AI
+// ============================================
+
+$color-primary-dark: #2a1810;
+$color-burgundy: #6b1a2c;
+$color-bronze: #b8860b;
+$color-gold: #d4af37;
+$color-cream: #f5f0e8;
+$color-text-dark: #1a1410;
+$color-text-light: #f8f4ed;
+
+$font-serif: "Playfair Display", "Noto Serif", Georgia, serif;
+$font-sans: "Inter", "Roboto", -apple-system, sans-serif;
+
+// ============================================
+// PAGE LAYOUT
+// ============================================
+
+.ai-appendix-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    $color-primary-dark 0%,
+    #251510 100%
+  );
+  color: $color-text-light;
+  font-family: $font-sans;
+  position: relative;
+
+  // Background decoration
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(2px 2px at 20% 30%, rgba($color-gold, 0.15), transparent),
+      radial-gradient(2px 2px at 60% 70%, rgba($color-bronze, 0.15), transparent);
+    background-size: 200% 200%;
+    animation: particleFloat 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    background-position: 0% 0%, 100% 100%;
+  }
+  50% {
+    background-position: 100% 100%, 0% 0%;
+  }
+}
+
+// ============================================
+// HEADER
+// ============================================
+
+.appendix-header {
+  position: relative;
+  z-index: 10;
+  background: linear-gradient(135deg, $color-burgundy 0%, $color-bronze 100%);
+  border-bottom: 2px solid $color-gold;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  padding: 1.5rem 2rem;
+
+  .header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .header-icon {
+      font-size: 48px;
+      color: $color-gold;
+      animation: iconGlow 2s ease-in-out infinite;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+      color: $color-cream;
+      letter-spacing: 0.05em;
+      font-family: $font-serif;
+    }
+  }
+
+  .home-button {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.5rem;
+    background: transparent;
+    border: 2px solid $color-gold;
+    border-radius: 8px;
+    color: $color-cream;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba($color-gold, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($color-gold, 0.4);
+    }
+
+    .anticon {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@keyframes iconGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba($color-gold, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba($color-gold, 0.8));
+  }
+}
+
+// ============================================
+// MAIN CONTENT
+// ============================================
+
+.appendix-content {
+  position: relative;
+  z-index: 5;
+  padding: 4rem 2rem;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// ============================================
+// INTRODUCTION
+// ============================================
+
+.intro-section {
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.intro-card {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba($color-burgundy, 0.2);
+  border: 2px solid rgba($color-bronze, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+  .intro-icon {
+    font-size: 64px;
+    color: $color-gold;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 12px rgba($color-gold, 0.4));
+  }
+
+  h2 {
+    font-family: $font-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-gold;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $color-cream;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ============================================
+// PRINCIPLE SECTIONS
+// ============================================
+
+.principle-section {
+  margin-bottom: 5rem;
+  animation: fadeInUp 0.8s ease-out;
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid rgba($color-bronze, 0.3);
+
+    .section-number {
+      font-family: $font-serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: $color-bronze;
+      opacity: 0.4;
+      line-height: 1;
+    }
+
+    .section-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .section-icon {
+        font-size: 2.5rem;
+        color: $color-gold;
+      }
+
+      h2 {
+        font-family: $font-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $color-gold;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// ============================================
+// TOOLS GRID
+// ============================================
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.tool-card {
+  background: rgba($color-burgundy, 0.15);
+  border: 2px solid rgba($color-bronze, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.4s ease;
+
+  &:hover {
+    border-color: $color-gold;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  &.featured {
+    border-color: $color-gold;
+    background: rgba($color-burgundy, 0.25);
+    box-shadow: 0 0 20px rgba($color-gold, 0.2);
+
+    &:hover {
+      box-shadow: 0 0 30px rgba($color-gold, 0.4);
+    }
+  }
+
+  .tool-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    .tool-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: $color-cream;
+      transition: transform 0.3s ease;
+
+      &.chatgpt {
+        background: linear-gradient(135deg, #10a37f, #1a7f64);
+      }
+
+      &.notebooklm {
+        background: linear-gradient(135deg, #4285f4, #34a853);
+      }
+
+      &.gemini {
+        background: linear-gradient(135deg, $color-gold, $color-bronze);
+      }
+
+      &.canva {
+        background: linear-gradient(135deg, #00c4cc, #7d2ae8);
+      }
+    }
+
+    h3 {
+      font-family: $font-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $color-gold;
+      margin: 0;
+      flex: 1;
+    }
+
+    .featured-badge {
+      padding: 0.25rem 0.75rem;
+      background: $color-gold;
+      color: $color-text-dark;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+  }
+
+  .tool-content {
+    .tool-purpose {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: $color-cream;
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      strong {
+        color: $color-gold;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &:hover .tool-header .tool-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+// ============================================
+// PROCESS SECTION
+// ============================================
+
+.process-section {
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: rgba($color-primary-dark, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba($color-bronze, 0.3);
+
+  .process-title {
+    font-family: $font-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $color-gold;
+    text-align: center;
+    margin: 0 0 2rem 0;
+  }
+
+  .process-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: rgba($color-burgundy, 0.2);
+      border: 2px solid rgba($color-bronze, 0.4);
+      border-radius: 12px;
+      flex: 1;
+      min-width: 200px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: $color-gold;
+        transform: scale(1.05);
+      }
+
+      .step-number {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $color-gold;
+        color: $color-text-dark;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+
+      .step-content {
+        h4 {
+          font-weight: 600;
+          color: $color-gold;
+          margin: 0 0 0.25rem 0;
+          font-size: 1rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+          color: rgba($color-cream, 0.9);
+          margin: 0;
+          line-height: 1.4;
+        }
+      }
+    }
+
+    .step-arrow {
+      font-size: 2rem;
+      color: $color-bronze;
+      font-weight: 700;
+    }
+  }
+}
+
+// ============================================
+// PRINCIPLE CARDS
+// ============================================
+
+.principle-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.principle-card {
+  padding: 2rem;
+  background: rgba($color-burgundy, 0.15);
+  border: 2px solid rgba($color-bronze, 0.3);
+  border-left: 4px solid $color-gold;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $color-gold;
+    transform: translateX(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    color: $color-gold;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: $color-cream;
+    margin: 0;
+
+    strong {
+      color: $color-gold;
+      font-weight: 600;
+    }
+  }
+}
+
+// ============================================
+// CREATIVITY GRID
+// ============================================
+
+.creativity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.creativity-item {
+  text-align: center;
+  padding: 2rem;
+  background: rgba($color-burgundy, 0.15);
+  border: 2px solid rgba($color-bronze, 0.3);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $color-gold;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+    .creativity-icon {
+      transform: scale(1.2);
+    }
+  }
+
+  .creativity-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  h4 {
+    font-family: $font-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $color-gold;
+    margin: 0 0 0.5rem 0;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: rgba($color-cream, 0.9);
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+.creativity-note {
+  padding: 1.5rem;
+  background: rgba($color-gold, 0.1);
+  border-left: 4px solid $color-gold;
+  border-radius: 8px;
+
+  p {
+    margin: 0;
+    color: $color-cream;
+    line-height: 1.7;
+
+    strong {
+      color: $color-gold;
+      font-weight: 600;
+    }
+  }
+}
+
+// ============================================
+// INTEGRITY BOXES
+// ============================================
+
+.integrity-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.integrity-box {
+  padding: 2rem;
+  background: rgba($color-burgundy, 0.2);
+  border: 2px solid $color-bronze;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $color-gold;
+    box-shadow: 0 0 20px rgba($color-gold, 0.3);
+    transform: scale(1.05);
+  }
+
+  h4 {
+    font-family: $font-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-gold;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: $color-cream;
+    margin: 0;
+
+    strong {
+      color: $color-gold;
+      font-weight: 600;
+    }
+  }
+}
+
+// ============================================
+// CONCLUSION
+// ============================================
+
+.conclusion-section {
+  margin: 5rem 0 3rem 0;
+}
+
+.conclusion-card {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(
+    135deg,
+    rgba($color-burgundy, 0.3) 0%,
+    rgba($color-bronze, 0.2) 100%
+  );
+  border: 3px solid $color-gold;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+
+  .conclusion-icon {
+    font-size: 64px;
+    color: $color-gold;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 12px rgba($color-gold, 0.5));
+  }
+
+  h2 {
+    font-family: $font-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $color-gold;
+    margin: 0 0 1.5rem 0;
+  }
+
+  p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: $color-cream;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+
+    strong {
+      color: $color-gold;
+      font-weight: 600;
+    }
+  }
+
+  .conclusion-signature {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba($color-gold, 0.3);
+
+    p {
+      font-family: $font-serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: $color-gold;
+      margin: 0;
+    }
+  }
+}
+
+// ============================================
+// FOOTER
+// ============================================
+
+.appendix-footer {
+  background: $color-primary-dark;
+  padding: 2rem;
+  border-top: 1px solid rgba($color-bronze, 0.3);
+  position: relative;
+  z-index: 5;
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+
+    .footer-line {
+      width: 80px;
+      height: 2px;
+      background: $color-bronze;
+      margin: 0 auto 1rem auto;
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      color: rgba($color-cream, 0.6);
+      margin: 0;
+    }
+  }
+}
+
+// ============================================
+// RESPONSIVE
+// ============================================
+
+@media (max-width: 768px) {
+  .appendix-header {
+    .header-content {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .header-left {
+      .header-icon {
+        font-size: 36px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .home-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  .appendix-content {
+    padding: 2rem 1rem;
+  }
+
+  .intro-card {
+    padding: 2rem 1.5rem;
+
+    .intro-icon {
+      font-size: 48px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .principle-section {
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+
+      .section-number {
+        font-size: 3rem;
+      }
+
+      .section-info {
+        h2 {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps {
+    flex-direction: column;
+
+    .step-arrow {
+      transform: rotate(90deg);
+    }
+  }
+
+  .creativity-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
