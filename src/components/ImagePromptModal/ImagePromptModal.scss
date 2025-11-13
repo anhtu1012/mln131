@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+.image-prompt-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.image-prompt-modal-content {
+  background: #2c2a2a;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 900px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid #444;
+  animation: slideIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: #f5f0e8;
+
+  h2 {
+    text-align: center;
+    color: #d4af37;
+    font-family: "Merriweather", serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #555;
+    padding-bottom: 1rem;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      color: #fff;
+      transform: rotate(90deg);
+    }
+  }
+
+  .modal-body {
+    display: flex;
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .image-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+      max-height: 400px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid #555;
+    }
+  }
+
+  .image-details {
+    flex: 1;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+
+    h3 {
+      color: #d4af37;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+      color: #ccc;
+
+      strong {
+        color: #f5f0e8;
+        font-weight: 700;
+      }
+    }
+
+    ul {
+      list-style-type: "– ";
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+      color: #ccc;
+
+      li {
+        margin-bottom: 0.25rem;
+      }
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: #444;
+      margin: 1.5rem 0;
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

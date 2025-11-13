@@ -4,6 +4,7 @@ import Exhibition from "./pages/exhibition";
 import Game from "./pages/game";
 import ChatAIPage from "./pages/chatai";
 import AIAppendix from "./pages/ai-appendix";
+import Contributors from "./pages/contributors";
 import ChatAI from "./components/ChatAI";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/game" element={<Game />} />
         <Route path="/chatai" element={<ChatAIPage />} />
         <Route path="/ai-appendix" element={<AIAppendix />} />
+        <Route path="/contributors" element={<Contributors />} />
       </Routes>
       <ChatAI />
     </BrowserRouter>

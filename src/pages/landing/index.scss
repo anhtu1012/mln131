@@ -545,6 +545,8 @@ $breakpoint-large: 1440px;
     font-size: 2.5rem;
     line-height: 1;
     display: flex;
+    flex-direction: column;
+    align-self: center;
     align-items: center;
     justify-content: center;
 

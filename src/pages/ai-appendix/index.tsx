@@ -9,6 +9,7 @@ import {
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import "./index.scss";
+import "./_image-prompts.scss";
 
 const AIAppendix: React.FC = () => {
   const navigate = useNavigate();
@@ -138,6 +139,132 @@ const AIAppendix: React.FC = () => {
                 </div>
               </div>
             </div>
+
+            {/* Image Prompt Section */}
+            <section className="image-prompt-section">
+              <h3 className="process-title">
+                Lệnh Tạo Hình Ảnh (Prompt) trong sản phẩm
+              </h3>
+              <p>
+                Để đảm bảo tính minh bạch, dưới đây là các yêu cầu chi tiết
+                (prompt) đã được sử dụng để tạo ra các hình ảnh chính trong
+                trang web này bằng công cụ AI.
+              </p>
+              <div className="prompt-details">
+                <div className="prompt-card">
+                  <h4>Phần I: Nền Tảng Lý Luận</h4>
+                  <ul>
+                    <li>
+                      <strong>Tên file:</strong> ethnic-unity-1.jpg
+                    </li>
+                    <li>
+                      <strong>Mô tả:</strong> Hình ảnh biểu tượng về đoàn kết
+                      dân tộc, các dân tộc cùng nhau làm việc/sinh hoạt
+                    </li>
+                    <li>
+                      <strong>Kích thước đề xuất:</strong> 1200x600px
+                    </li>
+                    <li>
+                      <strong>Nội dung gợi ý:</strong>
+                      <ul>
+                        <li>Các dân tộc anh em cùng nhau</li>
+                        <li>Cờ Việt Nam</li>
+                        <li>Biểu tượng đoàn kết</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div className="prompt-card">
+                  <h4>Phần II: Đặc Điểm và Chính Sách</h4>
+                  <ul>
+                    <li>
+                      <strong>Tên file:</strong> ethnic-tradition.jpg
+                    </li>
+                    <li>
+                      <strong>Mô tả:</strong> Hình ảnh truyền thống văn hóa dân
+                      tộc, lễ hội, trang phục truyền thống
+                    </li>
+                    <li>
+                      <strong>Kích thước đề xuất:</strong> 1200x600px
+                    </li>
+                    <li>
+                      <strong>Nội dung gợi ý:</strong>
+                      <ul>
+                        <li>Trang phục truyền thống các dân tộc</li>
+                        <li>Lễ hội văn hóa</li>
+                        <li>Làng bản miền núi</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div className="prompt-card">
+                  <h4>Phần IV: Mối Quan Hệ Chiến Lược</h4>
+                  <ul>
+                    <li>
+                      <strong>Tên file:</strong> national-unity.jpg
+                    </li>
+                    <li>
+                      <strong>Mô tả:</strong> Hình ảnh về đoàn kết quốc gia, sức
+                      mạnh tổng hợp
+                    </li>
+                    <li>
+                      <strong>Kích thước đề xuất:</strong> 1200x600px
+                    </li>
+                    <li>
+                      <strong>Nội dung gợi ý:</strong>
+                      <ul>
+                        <li>Quốc kỳ Việt Nam</li>
+                        <li>Biểu tượng sức mạnh quốc gia</li>
+                        <li>Các hoạt động quốc phòng, an ninh</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="general-requirements">
+                <h4>Yêu cầu chung về hình ảnh</h4>
+                <div className="requirements-columns">
+                  <div className="column">
+                    <h5>Chất lượng</h5>
+                    <ul>
+                      <li>
+                        <strong>Độ phân giải tối thiểu:</strong> 1200x600px
+                      </li>
+                      <li>
+                        <strong>Format:</strong> JPG hoặc PNG
+                      </li>
+                      <li>
+                        <strong>Dung lượng:</strong> Tối ưu dưới 500KB mỗi ảnh
+                      </li>
+                      <li>
+                        <strong>Chất lượng:</strong> High quality, không bị mờ,
+                        nhoè
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="column">
+                    <h5>Phong cách</h5>
+                    <ul>
+                      <li>
+                        <strong>Tông màu:</strong> Ấm, trang trọng, phù hợp với
+                        theme nâu sẫm, đỏ đô, vàng đồng
+                      </li>
+                      <li>
+                        <strong>Ánh sáng:</strong> Ánh sáng bình minh/hoàng hôn
+                        được ưu tiên
+                      </li>
+                      <li>
+                        <strong>Composition:</strong> Cân đối, có tầm nhìn rộng
+                      </li>
+                      <li>
+                        <strong>Cảm xúc:</strong> Trang trọng, hào hùng, đoàn
+                        kết
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
 
             {/* Quy trình */}
             <div className="process-section">
@@ -312,6 +439,11 @@ const AIAppendix: React.FC = () => {
           <p className="footer-text">
             © 2025 Phân Tích Chiến Lược Chính Trị Việt Nam
           </p>
+          <div className="footer-links">
+            <a href="/contributors" className="footer-link">
+              Người Đóng Góp
+            </a>
+          </div>
         </div>
       </footer>
     </div>

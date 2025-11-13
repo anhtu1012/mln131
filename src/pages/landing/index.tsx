@@ -25,11 +25,100 @@ import {
 } from "react-icons/gi";
 import { MdHistory, MdSecurity } from "react-icons/md";
 import Header from "../../components/Header/Header";
+import ImagePromptModal, {
+  ImagePromptData,
+} from "../../components/ImagePromptModal/ImagePromptModal";
 import "./index.scss";
 
 function Landing() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalData, setModalData] = useState<ImagePromptData | null>(null);
+
+  const diSanImageData: ImagePromptData = {
+    fileName: "ethnic-unity-1.jpg",
+    description:
+      "Hình ảnh biểu tượng về đoàn kết dân tộc, các dân tộc cùng nhau làm việc/sinh hoạt",
+    recommendedSize: "1200x600px",
+    suggestedContent: [
+      "Các dân tộc anh em cùng nhau",
+      "Cờ Việt Nam",
+      "Biểu tượng đoàn kết",
+    ],
+    quality: {
+      resolution: "1200x600px",
+      format: "JPG hoặc PNG",
+      size: "Tối ưu dưới 500KB mỗi ảnh",
+      quality: "High quality, không bị mờ, nhoè",
+    },
+    style: {
+      tone: "Ấm, trang trọng, phù hợp với theme nâu sẫm, đỏ đô, vàng đồng",
+      lighting: "Ánh sáng bình minh/hoàng hôn được ưu tiên",
+      composition: "Cân đối, có tầm nhìn rộng",
+      emotion: "Trang trọng, hào hùng, đoàn kết",
+    },
+    src: "/img/di-san.jpg",
+  };
+
+  const ethnicTraditionImageData: ImagePromptData = {
+    fileName: "ethnic-tradition.jpg",
+    description:
+      "Hình ảnh truyền thống văn hóa dân tộc, lễ hội, trang phục truyền thống",
+    recommendedSize: "1200x600px",
+    suggestedContent: [
+      "Trang phục truyền thống các dân tộc",
+      "Lễ hội văn hóa",
+      "Làng bản miền núi",
+    ],
+    quality: {
+      resolution: "1200x600px",
+      format: "JPG hoặc PNG",
+      size: "Tối ưu dưới 500KB mỗi ảnh",
+      quality: "High quality, không bị mờ, nhoè",
+    },
+    style: {
+      tone: "Ấm, trang trọng, phù hợp với theme nâu sẫm, đỏ đô, vàng đồng",
+      lighting: "Ánh sáng bình minh/hoàng hôn được ưu tiên",
+      composition: "Cân đối, có tầm nhìn rộng",
+      emotion: "Trang trọng, hào hùng, đoàn kết",
+    },
+    src: "/img/ethnic-tradition.png",
+  };
+
+  const nationalUnityImageData: ImagePromptData = {
+    fileName: "national-unity.jpg",
+    description: "Hình ảnh về đoàn kết quốc gia, sức mạnh tổng hợp",
+    recommendedSize: "1200x600px",
+    suggestedContent: [
+      "Quốc kỳ Việt Nam",
+      "Biểu tượng sức mạnh quốc gia",
+      "Các hoạt động quốc phòng, an ninh",
+    ],
+    quality: {
+      resolution: "1200x600px",
+      format: "JPG hoặc PNG",
+      size: "Tối ưu dưới 500KB mỗi ảnh",
+      quality: "High quality, không bị mờ, nhoè",
+    },
+    style: {
+      tone: "Ấm, trang trọng, phù hợp với theme nâu sẫm, đỏ đô, vàng đồng",
+      lighting: "Ánh sáng bình minh/hoàng hôn được ưu tiên",
+      composition: "Cân đối, có tầm nhìn rộng",
+      emotion: "Trang trọng, hào hùng, đoàn kết",
+    },
+    src: "/img/national-unity.jpg",
+  };
+
+  const openModal = (data: ImagePromptData) => {
+    setModalData(data);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalData(null);
+  };
 
   useEffect(() => {
     // Initialize AOS
@@ -220,12 +309,42 @@ function Landing() {
                     Khối đại đoàn kết toàn dân tộc là nguồn sức mạnh to lớn, là
                     nền tảng vững chắc cho mọi thắng lợi của cách mạng Việt Nam.
                   </p>
+                  <ul
+                    style={{
+                      fontSize: "1.1rem",
+                      lineHeight: "1.8",
+                      color: "#f5f0e8",
+                      marginTop: "1rem",
+                    }}
+                  >
+                    Vai trò và Biểu hiện của Đại Đoàn Kết:
+                    <li
+                      style={{
+                        fontSize: "1.1rem",
+                        lineHeight: "1.8",
+                        color: "rgba(245, 240, 232, 0.8)",
+                        marginTop: "0.5rem",
+                      }}
+                    >
+                      Sức mạnh này là sự thống nhất ý chí và hành động, liên kết
+                      mọi giai tầng, mọi dân tộc anh em, và hòa quyện giữa người
+                      Việt Nam trong nước với kiều bào ở nước ngoài. Trong thời
+                      kỳ đổi mới và hội nhập, đoàn kết không chỉ giúp đất nước
+                      vượt qua thách thức, giữ vững độc lập mà còn là nguồn động
+                      lực to lớn thúc đẩy sự đồng thuận xã hội, sáng tạo và phát
+                      triển bền vững. Việc phát huy sức mạnh khối đại đoàn kết
+                      toàn dân tộc luôn được Đảng và Nhà nước xác định là đường
+                      lối chiến lược và nhiệm vụ hàng đầu.
+                    </li>
+                  </ul>
                 </div>
                 <div className="image-side">
                   <div className="image-frame">
                     <img
                       src="/img/di-san.jpg"
                       alt="Đoàn kết dân tộc"
+                      onClick={() => openModal(diSanImageData)}
+                      style={{ cursor: "pointer" }}
                       onError={(e) => {
                         e.currentTarget.style.display = "none";
                       }}
@@ -236,7 +355,10 @@ function Landing() {
 
               <div className="principles-section">
                 <h3 className="subsection-title" data-aos="fade-up">
-                  Cương Lĩnh Dân Tộc
+                  Cương Lĩnh Dân Tộc của{" "}
+                  <span style={{ fontWeight: "bold" }}>
+                    V.I. Lênin (Vladimir Ilyich Lenin)
+                  </span>
                 </h3>
                 <div className="principles-list">
                   <div
@@ -249,7 +371,13 @@ function Landing() {
                     </div>
                     <div className="principle-content">
                       <h4>Các dân tộc hoàn toàn bình đẳng</h4>
-                      <p>Không phân biệt, đối xử công bằng với mọi dân tộc</p>
+                      <p style={{ fontSize: "1.1rem" }}>
+                        <span style={{ fontWeight: "bold" }}>
+                          Xóa bỏ mọi hình thức áp bức, bóc lột và đặc quyền giữa
+                          các dân tộc
+                        </span>
+                        . Không phân biệt, đối xử công bằng với mọi dân tộc
+                      </p>
                     </div>
                   </div>
                   <div
@@ -262,7 +390,14 @@ function Landing() {
                     </div>
                     <div className="principle-content">
                       <h4>Các dân tộc được quyền tự quyết</h4>
-                      <p>Tôn trọng quyền tự chủ và tự quyết của các dân tộc</p>
+                      <p style={{ fontSize: "1.1rem" }}>
+                        Mỗi dân tộc được{" "}
+                        <span style={{ fontWeight: "bold" }}>
+                          tự lựa chọn con đường phát triển của mình
+                        </span>
+                        , bao gồm quyền tách ra thành một quốc gia độc lập hoặc
+                        tự nguyện liên hiệp với các dân tộc khác.
+                      </p>
                     </div>
                   </div>
                   <div
@@ -275,7 +410,18 @@ function Landing() {
                     </div>
                     <div className="principle-content">
                       <h4>Liên hiệp công nhân tất cả các dân tộc</h4>
-                      <p>Xây dựng khối đại đoàn kết toàn dân tộc vững mạnh</p>
+                      <p style={{ fontSize: "1.1rem" }}>
+                        Nhấn mạnh sự{" "}
+                        <span style={{ fontWeight: "bold" }}>
+                          đoàn kết giai cấp
+                        </span>{" "}
+                        giữa những người lao động (công nhân, nông dân) thuộc
+                        mọi dân tộc. Là cơ sở để hình thành{" "}
+                        <span style={{ fontWeight: "bold" }}>
+                          khối đại đoàn kết toàn dân tộc
+                        </span>{" "}
+                        vững mạnh
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -288,7 +434,8 @@ function Landing() {
             <div className="section-header" data-aos="fade-right">
               <span className="section-number">II</span>
               <h2 className="section-heading">
-                Đặc Điểm Dân Tộc và Chính Sách Chiến Lược
+                Đặc điểm Dân tộc và Chính sách Chiến lược của Đảng và Nhà nước
+                Việt Nam
               </h2>
             </div>
 
@@ -335,6 +482,39 @@ function Landing() {
                   tộc.
                 </p>
               </div>
+              <div
+                className="char-card"
+                data-aos="flip-left"
+                data-aos-delay="100"
+              >
+                <div className="char-number">04</div>
+                <h4 className="char-title">Đa Dạng về Bản sắc và Văn hóa</h4>
+                <p className="char-desc">
+                  Việt Nam là một quốc gia đa dân tộc với 54 dân tộc anh em. Sự
+                  đa dạng này tạo nên sức sống và sự phong phú cho văn hóa Việt
+                  Nam, nhưng đồng thời đòi hỏi phải có chính sách tôn trọng, bảo
+                  tồn và phát huy bản sắc văn hóa của từng dân tộc
+                </p>
+              </div>
+              <div
+                className="char-card"
+                data-aos="flip-left"
+                data-aos-delay="200"
+              >
+                <div className="char-number">05</div>
+                <h4 className="char-title">
+                  Sớm hình thành và gắn bó trong một quốc gia thống nhất (Quốc
+                  gia - Dân tộc)
+                </h4>
+                <p className="char-desc">
+                  Quá trình hình thành các dân tộc ở Việt Nam gắn liền với quá
+                  trình dựng nước và giữ nước chung, tạo nên một cộng đồng quốc
+                  gia - dân tộc thống nhất từ rất sớm. Tính thống nhất lâu đời
+                  này đã tạo nên ý thức "người Việt Nam" mạnh mẽ và là cơ sở
+                  vững chắc để xây dựng và củng cố khối Đại đoàn kết toàn dân
+                  tộc, vượt qua mọi âm mưu chia rẽ.
+                </p>
+              </div>
             </div>
 
             <div className="image-divider" data-aos="zoom-in">
@@ -342,6 +522,8 @@ function Landing() {
                 src="/img/ethnic-tradition.png"
                 alt="Truyền thống dân tộc"
                 className="section-image"
+                onClick={() => openModal(ethnicTraditionImageData)}
+                style={{ cursor: "pointer" }}
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
                 }}
@@ -350,7 +532,7 @@ function Landing() {
 
             <div className="policy-direction">
               <h3 className="subsection-title" data-aos="fade-up">
-                Định Hướng Chiến Lược
+                Định hướng Chiến lược của Đảng và Nhà nước Việt Nam
               </h3>
               <div className="direction-grid">
                 <div
@@ -406,14 +588,14 @@ function Landing() {
             <div className="section-header" data-aos="fade-right">
               <span className="section-number">III</span>
               <h2 className="section-heading">
-                Tôn Giáo và Chính Sách Tôn Giáo
+                Tôn giáo và Chính sách Tôn giáo của Đảng và Nhà nước Việt Nam.
               </h2>
             </div>
 
             <div className="religion-content">
               <div className="religion-nature">
                 <h3 className="subsection-title" data-aos="fade-up">
-                  Bản Chất Tôn Giáo
+                  Bản chất Tôn giáo
                 </h3>
                 <div className="nature-boxes">
                   <div
@@ -422,7 +604,14 @@ function Landing() {
                     data-aos-delay="100"
                   >
                     <div className="nature-label">Tính Lịch Sử</div>
-                    <p>Tôn giáo phát triển qua các giai đoạn lịch sử</p>
+                    <p style={{ fontSize: "1.1rem" }}>
+                      Đòi hỏi phải có cách tiếp cận{" "}
+                      <span style={{ fontWeight: "bold" }}>
+                        khách quan, toàn diện
+                      </span>{" "}
+                      đối với sự tồn tại và phát triển của tôn giáo qua các thời
+                      kỳ
+                    </p>
                   </div>
                   <div
                     className="nature-box"
@@ -430,7 +619,14 @@ function Landing() {
                     data-aos-delay="200"
                   >
                     <div className="nature-label">Tính Quần Chúng</div>
-                    <p>Ảnh hưởng đến đông đảo tín đồ và cộng đồng</p>
+                    <p style={{ fontSize: "1.1rem" }}>
+                      Nhấn mạnh tôn giáo là vấn đề thuộc về đời sống tinh thần
+                      của hàng triệu người dân, cần phải{" "}
+                      <span style={{ fontWeight: "bold" }}>
+                        tôn trọng quyền tự do tín ngưỡng
+                      </span>{" "}
+                      của họ.
+                    </p>
                   </div>
                   <div
                     className="nature-box"
@@ -438,7 +634,15 @@ function Landing() {
                     data-aos-delay="300"
                   >
                     <div className="nature-label">Tính Chính Trị</div>
-                    <p>Có thể bị lợi dụng vào mục đích chính trị</p>
+                    <p style={{ fontSize: "1.1rem" }}>
+                      Là sự cảnh báo về việc các thế lực thù địch có thể lợi
+                      dụng tôn giáo để chống phá, gây chia rẽ khối đại đoàn kết
+                      dân tộc và Nhà nước, do đó cần phải{" "}
+                      <span style={{ fontWeight: "bold" }}>
+                        quản lý và bảo vệ
+                      </span>{" "}
+                      an ninh quốc gia.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -464,11 +668,25 @@ function Landing() {
                   <div className="stat-icon">
                     <FaChurch />
                   </div>
-                  <div className="stat-number">13</div>
+                  <div className="stat-number">16</div>
                   <div className="stat-label">Tôn giáo</div>
                   <div className="stat-description">
                     Tôn giáo được công nhận và bảo vệ bởi Nhà nước
                   </div>
+                  <a
+                    className="stat-label"
+                    href="https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/84306/danh-sach-16-ton-giao-va-36-to-chuc-ton-giao-duoc-cong-nhan-tai-viet-nam-hien-nay-cong-van-6955"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      color: "#fff",
+                      marginTop: "0.5rem",
+                    }}
+                  >
+                    Nguồn
+                  </a>
                 </div>
                 <div
                   className="stat-card"
@@ -478,11 +696,25 @@ function Landing() {
                   <div className="stat-icon">
                     <FaUsers />
                   </div>
-                  <div className="stat-number">24 triệu</div>
+                  <div className="stat-number">Trên 27 triệu</div>
                   <div className="stat-label">Tín đồ</div>
                   <div className="stat-description">
                     Tín đồ các tôn giáo trên toàn quốc
                   </div>
+                  <a
+                    className="stat-label"
+                    href="https://dangcongsan.org.vn/uybandantoc/tin-tuc-hoat-dong/viet-nam-co-16-ton-giao-gan-28-trieu-tin-do.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      color: "#fff",
+                      marginTop: "0.5rem",
+                    }}
+                  >
+                    Nguồn
+                  </a>
                 </div>
                 <div
                   className="stat-card"
@@ -497,6 +729,20 @@ function Landing() {
                   <div className="stat-description">
                     Dân tộc anh em cùng chung sống hòa bình
                   </div>
+                  <a
+                    className="stat-label"
+                    href="https://chinhphu.vn/dan-toc/danh-sach-cac-dan-toc-viet-nam-10000494?gidzl=8nKcTIQ-qqed3I1o8QFGJo0CAt8ueunBRrny9M6aYXvXNIbpDFdQ7Je0Bd0xh8yTRmLxAcGsdS8F9B3IIW"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      color: "#fff",
+                      marginTop: "0.5rem",
+                    }}
+                  >
+                    Nguồn
+                  </a>
                 </div>
               </div>
 
@@ -514,10 +760,59 @@ function Landing() {
                       <FaDove />
                     </div>
                     <h4>Tôn Trọng Tự Do</h4>
-                    <p>
-                      Bảo đảm quyền tự do tín ngưỡng và không tín ngưỡng của
-                      nhân dân. Không ép buộc, không phân biệt đối xử.
-                    </p>
+                    <li
+                      style={{
+                        textAlign: "left",
+                        fontSize: "1.1rem",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      <span style={{ fontWeight: "bold" }}>
+                        Bảo vệ Quyền Hiến định
+                      </span>
+                      : Quyền tự do tín ngưỡng đã được Hiến pháp và Luật pháp
+                      Việt Nam bảo đảm. Nhà nước bảo hộ các tổ chức tôn giáo hợp
+                      pháp.
+                    </li>
+                    <li
+                      style={{
+                        textAlign: "left",
+                        fontSize: "1.1rem",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      <span style={{ fontWeight: "bold" }}>Không Ép buộc</span>:
+                      Tuyệt đối không được cưỡng bức ai theo hoặc không theo bất
+                      kỳ tôn giáo nào.
+                    </li>
+                    <li
+                      style={{
+                        textAlign: "left",
+                        fontSize: "1.1rem",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      <span style={{ fontWeight: "bold" }}>
+                        Bình đẳng Pháp luật
+                      </span>
+                      : Mọi công dân, có hay không có tín ngưỡng, đều bình đẳng
+                      trước pháp luật, được hưởng quyền và thực hiện nghĩa vụ
+                      như nhau.
+                    </li>
+                    <li
+                      style={{
+                        textAlign: "left",
+                        fontSize: "1.1rem",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      <span style={{ fontWeight: "bold" }}>
+                        Tôn trọng Giới hạn
+                      </span>
+                      : Quyền tự do phải đi đôi với trách nhiệm tuân thủ pháp
+                      luật, không được xâm phạm an ninh quốc gia và trật tự công
+                      cộng.
+                    </li>
                   </div>
                   <div
                     className="reli-principle-card"
@@ -528,10 +823,59 @@ function Landing() {
                       <FaSearchPlus />
                     </div>
                     <h4>Phân Biệt Hai Mặt</h4>
-                    <p>
-                      Phân biệt rõ giữa tín ngưỡng, tôn giáo chân chính với việc
-                      lợi dụng tín ngưỡng, tôn giáo vào mục đích chính trị.
-                    </p>
+                    <li
+                      style={{
+                        textAlign: "left",
+                        fontSize: "1.1rem",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      <span style={{ fontWeight: "bold" }}>
+                        Phát huy "Tốt đời đẹp đạo"
+                      </span>
+                      : Khuyến khích giá trị đạo đức, văn hóa của tôn giáo và
+                      tinh thần Phụng sự Tổ quốc trong khối Đại đoàn kết.
+                    </li>
+                    <li
+                      style={{
+                        textAlign: "left",
+                        fontSize: "1.1rem",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      <span style={{ fontWeight: "bold" }}>
+                        Đấu tranh Chống Lợi dụng
+                      </span>
+                      : Kiên quyết đấu tranh chống lại mọi âm mưu của thế lực
+                      thù địch lợi dụng tôn giáo để chống phá chế độ, gây chia
+                      rẽ dân tộc hoặc truyền bá mê tín.
+                    </li>
+                    <li
+                      style={{
+                        textAlign: "left",
+                        fontSize: "1.1rem",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      <span style={{ fontWeight: "bold" }}>
+                        {" "}
+                        Phân Biệt Đối tượng
+                      </span>
+                      : Phân biệt rõ ràng giữa chúng tín đồ chân thành với các
+                      phần tử cầm đầu, cực đoan lợi dụng tôn giáo vì mục đích
+                      chính trị thù địch.
+                    </li>
+                    <li
+                      style={{
+                        textAlign: "left",
+                        fontSize: "1.1rem",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      <span style={{ fontWeight: "bold" }}> Hai Biện Pháp</span>
+                      : Kết hợp biện pháp kinh tế - xã hội (giải quyết căn
+                      nguyên) và biện pháp an ninh - pháp luật (xử lý vi phạm).
+                    </li>
                   </div>
                 </div>
               </div>
@@ -543,7 +887,8 @@ function Landing() {
             <div className="section-header" data-aos="fade-right">
               <span className="section-number">IV</span>
               <h2 className="section-heading">
-                Mối Quan Hệ Chiến Lược và Công Tác Đấu Tranh
+                Mối Quan hệ Chiến lược và Công tác Đấu tranh của Đảng và Nhà
+                nước Việt Nam
               </h2>
             </div>
 
@@ -574,6 +919,25 @@ function Landing() {
                       dân tộc
                     </p>
                   </div>
+                  <div className="framework-point">
+                    <span className="point-marker">▸</span>
+                    <p>
+                      Nguyên tắc "Tốt đời đẹp đạo": Khuyến khích đồng bào các
+                      tôn giáo thực hiện tốt nghĩa vụ công dân, gắn bó giữa
+                      Phụng sự Thiên Chúa/Phật với Phụng sự Tổ quốc, xây dựng
+                      khối đại đoàn kết.
+                    </p>
+                  </div>
+                  <div className="framework-point">
+                    <span className="point-marker">▸</span>
+                    <p>
+                      Vị trí của Đảng và Nhà nước: Đảng và Nhà nước Việt Nam giữ
+                      vai trò là người bảo vệ quyền lợi hợp pháp của các tôn
+                      giáo và dân tộc, đồng thời là lực lượng duy trì sự thống
+                      nhất và ổn định của đất nước trên nền tảng xã hội chủ
+                      nghĩa.
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -582,6 +946,8 @@ function Landing() {
                   src="/img/national-unity.jpg"
                   alt="Đoàn kết quốc gia"
                   className="section-image"
+                  onClick={() => openModal(nationalUnityImageData)}
+                  style={{ cursor: "pointer" }}
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
                   }}
@@ -958,9 +1324,18 @@ function Landing() {
             <a href="/ai-appendix" className="footer-link">
               <FaRobot /> Phụ Lục AI
             </a>
+            <a href="/contributors" className="footer-link">
+              <FaUsers /> Người Đóng Góp
+            </a>
           </div>
         </div>
       </footer>
+
+      <ImagePromptModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        imageData={modalData}
+      />
     </div>
   );
 }

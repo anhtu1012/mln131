@@ -1,0 +1,222 @@
+.image-prompt-section {
+  margin-top: 3rem;
+  padding: 0;
+  background: transparent;
+
+  .process-title {
+    color: #d4af37;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 1rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    }
+  }
+
+  > p {
+    text-align: center;
+    color: rgba(245, 240, 232, 0.8);
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .prompt-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .prompt-card {
+    background: linear-gradient(
+      135deg,
+      rgba(44, 42, 42, 0.9),
+      rgba(35, 33, 33, 0.9)
+    );
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #d4af37, #f5f0e8, #d4af37);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.15);
+      border-color: rgba(212, 175, 55, 0.4);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    h4 {
+      color: #d4af37;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      padding-bottom: 0.8rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+      color: #ccc;
+
+      li {
+        margin-bottom: 0.8rem;
+        padding-left: 1.2rem;
+        position: relative;
+        line-height: 1.6;
+
+        &::before {
+          content: "▸";
+          position: absolute;
+          left: 0;
+          color: #d4af37;
+          font-size: 0.9rem;
+        }
+
+        strong {
+          color: #f5f0e8;
+          font-weight: 600;
+        }
+
+        ul {
+          padding-left: 1.5rem;
+          margin-top: 0.6rem;
+
+          li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+
+            &::before {
+              content: "–";
+              color: rgba(212, 175, 55, 0.7);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .general-requirements {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background: linear-gradient(
+      135deg,
+      rgba(44, 42, 42, 0.6),
+      rgba(35, 33, 33, 0.6)
+    );
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+
+    h4 {
+      color: #d4af37;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 1rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 2px;
+        background: #d4af37;
+      }
+    }
+
+    .requirements-columns {
+      display: flex;
+      justify-content: space-around;
+      gap: 2.5rem;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+
+      .column {
+        flex: 1;
+        background: rgba(44, 42, 42, 0.8);
+        padding: 2rem;
+        border-radius: 10px;
+        border: 1px solid rgba(212, 175, 55, 0.15);
+        transition: all 0.3s ease;
+
+        &:hover {
+          border-color: rgba(212, 175, 55, 0.3);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h5 {
+          color: #d4af37;
+          margin-bottom: 1.2rem;
+          font-size: 1.2rem;
+          font-weight: 600;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+          padding-bottom: 0.6rem;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          color: #ccc;
+
+          li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.2rem;
+            position: relative;
+            line-height: 1.6;
+
+            &::before {
+              content: "•";
+              position: absolute;
+              left: 0;
+              color: #d4af37;
+              font-size: 1.2rem;
+            }
+
+            strong {
+              color: #f5f0e8;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}
