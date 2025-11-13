@@ -196,7 +196,7 @@ const mapPoints: MapPoint[] = [
     id: 3,
     x: 36,
     y: 28,
-    name: "Quản trị",
+    name: "Quảng trị",
     region: "Miền Trung",
     questionId: 3,
     icon: "🏔️",
